@@ -44,8 +44,13 @@ public class Calculator extends JFrame {
         operations.put("Add", new Add());
         operations.put("Sub", new Sub());
 
-        // TODO
-        // Add a new operation "Mul" for the multiplication of two integers as an anonymous class
+        Operation mul = new Operation() {
+            @Override
+            public int doOperation(int a, int b) {
+                return a * b;
+            }
+        };
+        operations.put("Mul", mul);
 
         operations.put("Div", (a, b) -> a / b);
 
